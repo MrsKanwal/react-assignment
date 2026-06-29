@@ -1,16 +1,51 @@
-# React + Vite
+# React Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a React application built using [Vite](https://vitejs.dev/) and React 19.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Follow these steps to set up and run the project on your local machine.
 
-## React Compiler
+### Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Ensure you have [Node.js](https://nodejs.org/) (version 18 or higher recommended) and `npm` installed on your system.
 
-## Expanding the ESLint configuration
+### 1. Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Install all required project dependencies by running:
+
+```bash
+npm install
+```
+
+### 2. Running the Development Server
+
+To start the development server with Hot Module Replacement (HMR):
+
+```bash
+npm run dev
+```
+
+After executing the command, open your browser and navigate to `http://localhost:5173` (or the local URL displayed in your terminal) to view the application.
+
+### 3. Building for Production
+
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+To preview the generated production build locally:
+
+```bash
+npm run preview
+```
+
+### 4. Code Linting
+
+To run ESLint and check for potential code issues:
+
+```bash
+npm run lint
+```
