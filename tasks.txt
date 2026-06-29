@@ -1,0 +1,126 @@
+Section 1: Getting Started with React (15 Marks)
+Set up your first React project and understand the basics of components and JSX.
+Task 1 Create Your First React App 5 Marks
+Use Vite to scaffold a brand-new React project and get it running in your browser.
+What to do:
+• Run: npm create vite@latest my-react-app -- --template react
+• Navigate into the folder and run: npm install, then npm run dev
+• Open your browser to http://localhost:5173 and confirm the app loads
+• Delete the boilerplate inside App.jsx and replace it with a heading that says 'Hello, React!'
+• Take a screenshot of your running app
+Starter code hint:
+function App() { return ( <div> <h1>Hello, React!</h1> </div> ); }
+■ Tip: If npm isn't installed, download Node.js from nodejs.org first (LTS version).
+Task 2 Your First Component 10 Marks
+Learn how to break a page into small, reusable pieces called components.
+What to do:
+• Create a new file called Greeting.jsx inside the src/ folder
+• Write a Greeting component that displays a heading with your name and a short welcome message
+• Import Greeting into App.jsx and render it on the page
+• Create a second component called Footer.jsx with your name and today's date
+• Render both Greeting and Footer inside App.jsx
+Starter code hint:
+// Greeting.jsx function Greeting() { return ( <div> <h2>Welcome, [Your
+Name]!</h2> <p>This is my first React component.</p> </div> ); } export default
+Greeting;
+■ Tip: Every component name must start with a capital letter (e.g. Greeting, not greeting).
+
+Section 2: Props — Passing Data to Components (20 Marks)
+Props let you send information from a parent component to a child component, making your
+components flexible and reusable.
+Task 3 Profile Card with Props 10 Marks
+Build a ProfileCard component that can be reused to display different people's information.
+What to do:
+• Create ProfileCard.jsx that accepts name, age, hobby, and avatarUrl as props
+• Display all four pieces of information inside a styled card (use inline styles or a CSS file)
+• Render at least 3 different ProfileCard components in App.jsx with different data
+• Add a default value for hobby so it shows 'Not specified' when not provided
+Starter code hint:
+
+function ProfileCard({ name, age, hobby = 'Not specified', avatarUrl }) { return
+( <div style={{ border: '1px solid #ccc', padding: '16px', margin: '8px' }}> <img
+src={avatarUrl} alt={name} width={60} /> <h3>{name}</h3> <p>Age: {age}</p>
+<p>Hobby: {hobby}</p> </div> ); }
+■ Tip: Pass props just like HTML attributes: <ProfileCard name='Alice' age={25} />
+Task 4 Rendering a List with .map() 10 Marks
+Use JavaScript's .map() method to render a list of items from an array.
+What to do:
+• Create an array of 5 fruit objects: [{ id: 1, name: 'Apple', emoji: '■' }, ...]
+• Use .map() inside JSX to render each fruit as a list item
+• Add a unique key prop to each mapped element
+• Style the list so each fruit item has a coloured background
+• Add a total count at the bottom: 'Total fruits: 5'
+Starter code hint:
+const fruits = [ { id: 1, name: 'Apple', emoji: '■' }, { id: 2, name: 'Banana',
+emoji: '■' }, ]; fruits.map(fruit => ( <li key={fruit.id}>{fruit.emoji}
+{fruit.name}</li> ))
+■ Tip: React needs a unique key on each list item to track changes efficiently.
+
+Section 3: State & Events (25 Marks)
+State lets your component remember values and update the screen when something changes. Events
+let users interact with your app.
+Task 5 Click Counter 8 Marks
+Build a simple counter that increases, decreases, and resets when buttons are clicked.
+What to do:
+• Use the useState hook to store the count value (start at 0)
+• Add three buttons: '+1', '-1', and 'Reset'
+• The count must never go below 0 — show a friendly message when it reaches 0
+• Change the count colour to red when it is above 10
+• Display how many times the '+1' button has been clicked in total
+Starter code hint:
+const [count, setCount] = useState(0); // To update: setCount(count + 1);
+setCount(count - 1); setCount(0); // reset
+■ Tip: import { useState } from 'react'; — don't forget to import useState!
+Task 6 Colour Changer 7 Marks
+Build an interactive page where the user can change the background colour.
+What to do:
+• Show a box (div) with a solid background colour
+
+• Add 5 coloured buttons (Red, Blue, Green, Yellow, Purple)
+• Clicking a button changes the box's background to that colour
+• Display the current colour name as text below the box
+• Add a 'Random Colour' button that picks a random hex colour
+■ Tip: Store the current colour in state: const [colour, setColour] = useState('red');
+Task 7 Live Search Filter 10 Marks
+Build a search box that filters a list of items as the user types — in real time.
+What to do:
+• Create a hardcoded list of at least 8 country names
+• Add a text input at the top of the list
+• Use useState to store the search query
+• Use onChange on the input to update the query state
+• Filter the country list to only show names that include the typed text (case-insensitive)
+• Show 'No results found' when the filter matches nothing
+■ Tip: Convert both the query and the country name to lowercase before comparing:
+.toLowerCase().includes(query.toLowerCase())
+
+Section 4: Styling React Components (15 Marks)
+Task 8 Personal Portfolio Page 15 Marks
+Build a simple personal portfolio page that showcases everything you've learned so far.
+What to do:
+• Create sections: Header (name + tagline), About Me, Skills, Projects, Footer
+• Use a separate CSS file (App.css) for styles — no inline styles in this task
+• Display your skills as a list of badge-style tags (e.g. HTML, CSS, JavaScript, React)
+• Show at least 2 'project cards' with a title, short description, and a placeholder image
+• Make the page look neat on both desktop and mobile using Flexbox or CSS Grid
+• Add a hover effect on the project cards
+■ Tip: Use className (not class) when adding CSS classes in JSX.
+
+Section 5: Mini Project — To-Do List App (25 Marks)
+Put everything together by building a functional To-Do List application from scratch.
+Task 9 To-Do List App 25 Marks
+Build a complete To-Do List app using the React skills you've practised in this assignment.
+What to do:
+• INPUT: A text box and an 'Add' button to add new tasks
+• LIST: Display all tasks in a list below the input
+• COMPLETE: Clicking a task crosses it out (toggle completed state)
+• DELETE: Each task has a 'Delete' button to remove it from the list
+• EMPTY CHECK: Prevent adding empty tasks — show a warning message
+• COUNTER: Show 'X tasks remaining' (count only incomplete tasks)
+
+• CLEAR ALL: A button to delete all completed tasks at once
+• STYLE: Make the app visually clean and user-friendly with CSS
+Starter code hint:
+// Suggested state in App.jsx const [tasks, setTasks] = useState([]); const
+[inputValue, setInputValue] = useState(''); // Each task object: { id:
+Date.now(), text: 'Buy groceries', completed: false }
+■ Tip: Break the app into small components: App, TaskInput, TaskList, TaskItem. Tackle one piece at a time!
